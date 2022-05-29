@@ -1,7 +1,7 @@
 {
     "type": "project",
     "license": "proprietary",
-    "minimum-stability": "RC",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
         "php": ">=8.0.2",
@@ -15,21 +15,21 @@
         "nelmio/cors-bundle": "^2.2",
         "phpdocumentor/reflection-docblock": "^5.3",
         "phpstan/phpdoc-parser": "^1.5",
-        "symfony/asset": "^6.1@RC",
-        "symfony/console": "^6.1@RC",
-        "symfony/dotenv": "^6.1@RC",
-        "symfony/expression-language": "^6.1@RC",
+        "symfony/asset": "^6.1",
+        "symfony/console": "^6.1",
+        "symfony/dotenv": "^6.1",
+        "symfony/expression-language": "^6.1",
         "symfony/flex": "^2",
-        "symfony/framework-bundle": "^6.1@RC",
-        "symfony/property-access": "^6.1@RC",
-        "symfony/property-info": "^6.1@RC",
-        "symfony/proxy-manager-bridge": "^6.1@RC",
-        "symfony/runtime": "^6.1@RC",
-        "symfony/security-bundle": "^6.1@RC",
-        "symfony/serializer": "^6.1@RC",
-        "symfony/twig-bundle": "^6.1@RC",
-        "symfony/validator": "^6.1@RC",
-        "symfony/yaml": "^6.1@RC"
+        "symfony/framework-bundle": "^6.1",
+        "symfony/property-access": "^6.1",
+        "symfony/property-info": "^6.1",
+        "symfony/proxy-manager-bridge": "^6.1",
+        "symfony/runtime": "^6.1",
+        "symfony/security-bundle": "^6.1",
+        "symfony/serializer": "^6.1",
+        "symfony/twig-bundle": "^6.1",
+        "symfony/validator": "^6.1",
+        "symfony/yaml": "^6.1"
     },
     "config": {
         "allow-plugins": {
@@ -39,8 +39,7 @@
         },
         "optimize-autoloader": true,
         "preferred-install": {
-            "*": "dist",
-            "symfony/*": "RC"
+            "*": "dist"
         },
         "sort-packages": true
     },
@@ -80,7 +79,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "^6.1@RC"
+            "require": "^6.1"
         }
     }
 }
