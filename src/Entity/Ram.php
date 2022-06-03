@@ -19,7 +19,7 @@ class Ram extends Part
     #[ORM\Column(type: 'string', length: 5, enumType: RamType::class)]
     private string $type;
 
-    public function getSpeed(): ?int
+    public function getSpeed(): int
     {
         return $this->speed;
     }
@@ -31,7 +31,7 @@ class Ram extends Part
         return $this;
     }
 
-    public function getSize(): ?string
+    public function getSize(): string
     {
         return $this->size;
     }
@@ -43,7 +43,7 @@ class Ram extends Part
         return $this;
     }
 
-    public function getType(): ?string
+    public function getType(): string
     {
         return $this->type;
     }

@@ -26,7 +26,10 @@ class Mainboard extends Part
     #[ORM\Column(type: 'integer')]
     private int $memoryCap;
 
-    public function getSocket(): ?string
+    #[ORM\Column(type: 'string', length: 8, enumType: FormFactor::class)]
+    private string $size;
+
+    public function getSocket(): string
     {
         return $this->socket;
     }
@@ -38,7 +41,7 @@ class Mainboard extends Part
         return $this;
     }
 
-    public function getChipset(): ?string
+    public function getChipset(): string
     {
         return $this->chipset;
     }
@@ -50,7 +53,7 @@ class Mainboard extends Part
         return $this;
     }
 
-    public function getType(): ?string
+    public function getType(): string
     {
         return $this->type;
     }
@@ -62,7 +65,7 @@ class Mainboard extends Part
         return $this;
     }
 
-    public function getMemoryType(): ?string
+    public function getMemoryType(): string
     {
         return $this->memoryType;
     }
@@ -74,7 +77,7 @@ class Mainboard extends Part
         return $this;
     }
 
-    public function getMemoryCap(): ?int
+    public function getMemoryCap(): int
     {
         return $this->memoryCap;
     }
@@ -82,6 +85,18 @@ class Mainboard extends Part
     public function setMemoryCap(int $memoryCap): self
     {
         $this->memoryCap = $memoryCap;
+
+        return $this;
+    }
+
+    public function getSize(): string
+    {
+        return $this->size;
+    }
+
+    public function setSize(string $size): self
+    {
+        $this->size = $size;
 
         return $this;
     }

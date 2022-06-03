@@ -22,7 +22,7 @@ class DisplayPorts
     #[ORM\Column(type: 'integer')]
     private int $usbTypeC;
 
-    public function getVga(): ?int
+    public function getVga(): int
     {
         return $this->vga;
     }
@@ -34,7 +34,7 @@ class DisplayPorts
         return $this;
     }
 
-    public function getDvi(): ?int
+    public function getDvi(): int
     {
         return $this->dvi;
     }
@@ -46,7 +46,7 @@ class DisplayPorts
         return $this;
     }
 
-    public function getHdmi(): ?int
+    public function getHdmi(): int
     {
         return $this->hdmi;
     }
@@ -58,7 +58,7 @@ class DisplayPorts
         return $this;
     }
 
-    public function getDisplayPort(): ?int
+    public function getDisplayPort(): int
     {
         return $this->displayPort;
     }
@@ -70,7 +70,7 @@ class DisplayPorts
         return $this;
     }
 
-    public function getUsbTypeC(): ?int
+    public function getUsbTypeC(): int
     {
         return $this->usbTypeC;
     }

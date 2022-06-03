@@ -25,7 +25,7 @@ class Connectors
     #[ORM\Column(type: 'integer')]
     private int $floppyPower = 0;
 
-    public function getAtxMainboardPower(): ?int
+    public function getAtxMainboardPower(): int
     {
         return $this->atxMainboardPower;
     }
@@ -37,7 +37,7 @@ class Connectors
         return $this;
     }
 
-    public function getCpuPower(): ?int
+    public function getCpuPower(): int
     {
         return $this->cpuPower;
     }
@@ -49,7 +49,7 @@ class Connectors
         return $this;
     }
 
-    public function getVgaPower(): ?int
+    public function getVgaPower(): int
     {
         return $this->vgaPower;
     }
@@ -61,7 +61,7 @@ class Connectors
         return $this;
     }
 
-    public function getMolex(): ?int
+    public function getMolex(): int
     {
         return $this->molex;
     }
@@ -73,7 +73,7 @@ class Connectors
         return $this;
     }
 
-    public function getSataPower(): ?int
+    public function getSataPower(): int
     {
         return $this->sataPower;
     }
@@ -85,7 +85,7 @@ class Connectors
         return $this;
     }
 
-    public function getFloppyPower(): ?int
+    public function getFloppyPower(): int
     {
         return $this->floppyPower;
     }

@@ -15,7 +15,7 @@ class Psu extends Part
     #[ORM\Embedded(class: Connectors::class)]
     private Connectors $connectors;
 
-    public function getMaxPower(): ?int
+    public function getMaxPower(): int
     {
         return $this->maxPower;
     }

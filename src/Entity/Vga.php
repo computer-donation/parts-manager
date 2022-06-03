@@ -19,7 +19,7 @@ class Vga extends Part
     #[ORM\Embedded(class: PowerConnectors::class)]
     private PowerConnectors $powerConnectors;
 
-    public function getRecommendedPsuWattage(): ?int
+    public function getRecommendedPsuWattage(): int
     {
         return $this->recommendedPsuWattage;
     }

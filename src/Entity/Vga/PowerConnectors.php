@@ -16,7 +16,7 @@ class PowerConnectors
     #[ORM\Column(type: 'integer')]
     private int $twelvePin;
 
-    public function getSixPin(): ?int
+    public function getSixPin(): int
     {
         return $this->sixPin;
     }
@@ -28,7 +28,7 @@ class PowerConnectors
         return $this;
     }
 
-    public function getEightPin(): ?int
+    public function getEightPin(): int
     {
         return $this->eightPin;
     }
@@ -40,7 +40,7 @@ class PowerConnectors
         return $this;
     }
 
-    public function getTwelvePin(): ?int
+    public function getTwelvePin(): int
     {
         return $this->twelvePin;
     }

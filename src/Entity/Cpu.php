@@ -15,7 +15,7 @@ class Cpu extends Part
     #[ORM\Column(type: 'string', length: 14)]
     private string $socket;
 
-    public function getManufacturer(): ?string
+    public function getManufacturer(): string
     {
         return $this->manufacturer;
     }
@@ -27,7 +27,7 @@ class Cpu extends Part
         return $this;
     }
 
-    public function getSocket(): ?string
+    public function getSocket(): string
     {
         return $this->socket;
     }
