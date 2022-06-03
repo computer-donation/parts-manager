@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Enum\CpuManufacturer;
+use App\Enum\FormFactor;
 use App\Enum\RamType;
 use App\Repository\MainboardRepository;
 use Doctrine\ORM\Mapping as ORM;
