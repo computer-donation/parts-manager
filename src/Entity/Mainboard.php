@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use App\Enum\CpuManufacturer;
 use App\Enum\FormFactor;
 use App\Enum\RamType;
 use App\Repository\MainboardRepository;
@@ -13,12 +12,6 @@ class Mainboard extends Part
 {
     #[ORM\Column(type: 'string', length: 14)]
     private string $socket;
-
-    #[ORM\Column(type: 'string', length: 4)]
-    private string $chipset;
-
-    #[ORM\Column(type: 'string', length: 5, enumType: CpuManufacturer::class)]
-    private string $type;
 
     #[ORM\Column(type: 'string', length: 5, enumType: RamType::class)]
     private string $memoryType;
@@ -37,30 +30,6 @@ class Mainboard extends Part
     public function setSocket(string $socket): self
     {
         $this->socket = $socket;
-
-        return $this;
-    }
-
-    public function getChipset(): string
-    {
-        return $this->chipset;
-    }
-
-    public function setChipset(string $chipset): self
-    {
-        $this->chipset = $chipset;
-
-        return $this;
-    }
-
-    public function getType(): string
-    {
-        return $this->type;
-    }
-
-    public function setType(string $type): self
-    {
-        $this->type = $type;
 
         return $this;
     }
