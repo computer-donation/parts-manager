@@ -10,14 +10,14 @@ use Doctrine\ORM\Mapping as ORM;
 class ComputerCase extends Part
 {
     #[ORM\Column(type: 'string', length: 8, enumType: FormFactor::class)]
-    private string $size;
+    private FormFactor $size;
 
-    public function getSize(): string
+    public function getSize(): FormFactor
     {
         return $this->size;
     }
 
-    public function setSize(string $size): self
+    public function setSize(FormFactor $size): self
     {
         $this->size = $size;
 

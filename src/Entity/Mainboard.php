@@ -4,42 +4,43 @@ namespace App\Entity;
 
 use App\Enum\FormFactor;
 use App\Enum\RamType;
+use App\Enum\Socket;
 use App\Repository\MainboardRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MainboardRepository::class)]
 class Mainboard extends Part
 {
-    #[ORM\Column(type: 'string', length: 14)]
-    private string $socket;
+    #[ORM\Column(type: 'string', length: 14, enumType: Socket::class)]
+    private Socket $socket;
 
     #[ORM\Column(type: 'string', length: 5, enumType: RamType::class)]
-    private string $memoryType;
+    private RamType $memoryType;
 
     #[ORM\Column(type: 'integer')]
     private int $memoryCap;
 
     #[ORM\Column(type: 'string', length: 8, enumType: FormFactor::class)]
-    private string $size;
+    private FormFactor $size;
 
-    public function getSocket(): string
+    public function getSocket(): Socket
     {
         return $this->socket;
     }
 
-    public function setSocket(string $socket): self
+    public function setSocket(Socket $socket): self
     {
         $this->socket = $socket;
 
         return $this;
     }
 
-    public function getMemoryType(): string
+    public function getMemoryType(): RamType
     {
         return $this->memoryType;
     }
 
-    public function setMemoryType(string $memoryType): self
+    public function setMemoryType(RamType $memoryType): self
     {
         $this->memoryType = $memoryType;
 
@@ -58,12 +59,12 @@ class Mainboard extends Part
         return $this;
     }
 
-    public function getSize(): string
+    public function getSize(): FormFactor
     {
         return $this->size;
     }
 
-    public function setSize(string $size): self
+    public function setSize(FormFactor $size): self
     {
         $this->size = $size;
 

@@ -14,10 +14,10 @@ class Ram extends Part
     private int $speed;
 
     #[ORM\Column(type: 'string', length: 6, enumType: RamSize::class)]
-    private string $size;
+    private RamSize $size;
 
     #[ORM\Column(type: 'string', length: 5, enumType: RamType::class)]
-    private string $type;
+    private RamType $type;
 
     public function getSpeed(): int
     {
@@ -31,24 +31,24 @@ class Ram extends Part
         return $this;
     }
 
-    public function getSize(): string
+    public function getSize(): RamSize
     {
         return $this->size;
     }
 
-    public function setSize(string $size): self
+    public function setSize(RamSize $size): self
     {
         $this->size = $size;
 
         return $this;
     }
 
-    public function getType(): string
+    public function getType(): RamType
     {
         return $this->type;
     }
 
-    public function setType(string $type): self
+    public function setType(RamType $type): self
     {
         $this->type = $type;
 
