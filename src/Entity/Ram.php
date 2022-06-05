@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Enum\RamSize;
+use App\Enum\RamOutline;
 use App\Enum\RamType;
 use App\Repository\RamRepository;
 use Doctrine\ORM\Mapping as ORM;
@@ -13,11 +13,14 @@ class Ram extends Part
     #[ORM\Column(type: 'integer')]
     private int $speed;
 
-    #[ORM\Column(type: 'string', length: 6, enumType: RamSize::class)]
-    private RamSize $size;
+    #[ORM\Column(type: 'string', length: 6, enumType: RamOutline::class)]
+    private RamOutline $outline;
 
     #[ORM\Column(type: 'string', length: 5, enumType: RamType::class)]
     private RamType $type;
+
+    #[ORM\Column(type: 'integer')]
+    private int $size;
 
     public function getSpeed(): int
     {
@@ -31,14 +34,14 @@ class Ram extends Part
         return $this;
     }
 
-    public function getSize(): RamSize
+    public function getOutline(): RamOutline
     {
-        return $this->size;
+        return $this->outline;
     }
 
-    public function setSize(RamSize $size): self
+    public function setOutline(RamOutline $outline): self
     {
-        $this->size = $size;
+        $this->outline = $outline;
 
         return $this;
     }
@@ -51,6 +54,18 @@ class Ram extends Part
     public function setType(RamType $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getSize(): ?int
+    {
+        return $this->size;
+    }
+
+    public function setSize(int $size): self
+    {
+        $this->size = $size;
 
         return $this;
     }

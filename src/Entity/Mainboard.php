@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Enum\FormFactor;
+use App\Enum\RamOutline;
 use App\Enum\RamType;
 use App\Enum\Socket;
 use App\Repository\MainboardRepository;
@@ -16,6 +17,9 @@ class Mainboard extends Part
 
     #[ORM\Column(type: 'string', length: 5, enumType: RamType::class)]
     private RamType $memoryType;
+
+    #[ORM\Column(type: 'string', length: 6, enumType: RamOutline::class)]
+    private RamOutline $memoryOutline;
 
     #[ORM\Column(type: 'integer')]
     private int $memoryCap;
@@ -43,6 +47,18 @@ class Mainboard extends Part
     public function setMemoryType(RamType $memoryType): self
     {
         $this->memoryType = $memoryType;
+
+        return $this;
+    }
+
+    public function getMemoryOutline(): RamOutline
+    {
+        return $this->memoryOutline;
+    }
+
+    public function setMemoryOutline(RamOutline $memoryOutline): self
+    {
+        $this->memoryOutline = $memoryOutline;
 
         return $this;
     }

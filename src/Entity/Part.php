@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Enum\Status;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\MappedSuperclass]
@@ -15,8 +16,8 @@ class Part
     #[ORM\Column(type: 'string', length: 255)]
     private string $name;
 
-    #[ORM\Column(type: 'boolean')]
-    private bool $broken = false;
+    #[ORM\Column(type: 'integer', enumType: Status::class)]
+    private Status $status = Status::Unknown;
 
     public function getId(): ?int
     {
@@ -35,14 +36,14 @@ class Part
         return $this;
     }
 
-    public function isBroken(): bool
+    public function isStatus(): Status
     {
-        return $this->broken;
+        return $this->status;
     }
 
-    public function setBroken(bool $broken): self
+    public function setStatus(Status $status): self
     {
-        $this->broken = $broken;
+        $this->status = $status;
 
         return $this;
     }

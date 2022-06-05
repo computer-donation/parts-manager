@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Cpu;
 use App\Enum\Socket;
+use App\Enum\Status;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -54,11 +55,13 @@ class CpuFixtures extends Fixture
             ['i5 6320', Socket::LGA1151],
             ['i5 6402P', Socket::LGA1151],
             ['i5 7400T', Socket::LGA1151],
+            ['Core 2 Duo e8400', Socket::LGA775],
         ];
         foreach ($items as $item) {
             $cpu = new Cpu();
-            $cpu->setName($item[0]);
-            $cpu->setSocket($item[1]);
+            $cpu->setName($item[0])
+                ->setSocket($item[1])
+                ->setStatus(Status::Working);
             $manager->persist($cpu);
         }
 
