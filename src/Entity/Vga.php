@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use App\Entity\Vga\DisplayPorts;
-use App\Entity\Vga\PowerConnectors;
 use App\Repository\VgaRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -15,9 +14,6 @@ class Vga extends Part
 
     #[ORM\Embedded(class: DisplayPorts::class)]
     private DisplayPorts $displayPorts;
-
-    #[ORM\Embedded(class: PowerConnectors::class)]
-    private PowerConnectors $powerConnectors;
 
     public function getRecommendedPsuWattage(): int
     {
@@ -39,18 +35,6 @@ class Vga extends Part
     public function setDisplayPorts(DisplayPorts $displayPorts): self
     {
         $this->displayPorts = $displayPorts;
-
-        return $this;
-    }
-
-    public function getPowerConnectors(): PowerConnectors
-    {
-        return $this->powerConnectors;
-    }
-
-    public function setPowerConnectors(PowerConnectors $powerConnectors): self
-    {
-        $this->powerConnectors = $powerConnectors;
 
         return $this;
     }

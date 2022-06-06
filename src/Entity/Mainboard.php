@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use App\Entity\Mainboard\DataConnectors;
+use App\Entity\Vga\DisplayPorts;
 use App\Enum\FormFactor;
 use App\Enum\RamOutline;
 use App\Enum\RamType;
@@ -26,6 +28,12 @@ class Mainboard extends Part
 
     #[ORM\Column(type: 'string', length: 8, enumType: FormFactor::class)]
     private FormFactor $size;
+
+    #[ORM\Embedded(class: DisplayPorts::class)]
+    private DisplayPorts $displayPorts;
+
+    #[ORM\Embedded(class: DataConnectors::class)]
+    private DataConnectors $dataConnectors;
 
     public function getSocket(): Socket
     {
@@ -83,6 +91,30 @@ class Mainboard extends Part
     public function setSize(FormFactor $size): self
     {
         $this->size = $size;
+
+        return $this;
+    }
+
+    public function getDisplayPorts(): DisplayPorts
+    {
+        return $this->displayPorts;
+    }
+
+    public function setDisplayPorts(DisplayPorts $displayPorts): self
+    {
+        $this->displayPorts = $displayPorts;
+
+        return $this;
+    }
+
+    public function getDataConnectors(): DataConnectors
+    {
+        return $this->dataConnectors;
+    }
+
+    public function setDataConnectors(DataConnectors $dataConnectors): self
+    {
+        $this->dataConnectors = $dataConnectors;
 
         return $this;
     }
