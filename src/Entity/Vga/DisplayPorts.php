@@ -8,19 +8,19 @@ use Doctrine\ORM\Mapping as ORM;
 class DisplayPorts
 {
     #[ORM\Column(type: 'integer')]
-    private int $vga;
+    private int $vga = 0;
 
     #[ORM\Column(type: 'integer')]
-    private int $dvi;
+    private int $dvi = 0;
 
     #[ORM\Column(type: 'integer')]
-    private int $hdmi;
+    private int $hdmi = 0;
 
     #[ORM\Column(type: 'integer')]
-    private int $displayPort;
+    private int $displayPort = 0;
 
     #[ORM\Column(type: 'integer')]
-    private int $usbTypeC;
+    private int $usbTypeC = 0;
 
     public function getVga(): int
     {

@@ -26,8 +26,11 @@ class Mainboard extends Part
     #[ORM\Column(type: 'integer')]
     private int $memoryCap;
 
-    #[ORM\Column(type: 'string', length: 8, enumType: MainboardFormFactor::class)]
+    #[ORM\Column(type: 'string', length: 9, enumType: MainboardFormFactor::class)]
     private MainboardFormFactor $formFactor;
+
+    #[ORM\Column(type: 'boolean')]
+    private bool $integratedGraphics;
 
     #[ORM\Embedded(class: DisplayPorts::class)]
     private DisplayPorts $displayPorts;
@@ -91,6 +94,18 @@ class Mainboard extends Part
     public function setFormFactor(MainboardFormFactor $formFactor): self
     {
         $this->formFactor = $formFactor;
+
+        return $this;
+    }
+
+    public function hasIntegratedGraphics(): bool
+    {
+        return $this->integratedGraphics;
+    }
+
+    public function setIntegratedGraphics(bool $integratedGraphics): self
+    {
+        $this->integratedGraphics = $integratedGraphics;
 
         return $this;
     }

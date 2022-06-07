@@ -8,19 +8,16 @@ use Doctrine\ORM\Mapping as ORM;
 class DataConnectors
 {
     #[ORM\Column(type: 'integer')]
-    private int $ide;
+    private int $ide = 0;
 
     #[ORM\Column(type: 'integer')]
-    private int $mSata;
+    private int $mSata = 0;
 
     #[ORM\Column(type: 'integer')]
-    private int $m2Sata;
+    private int $m2 = 0;
 
     #[ORM\Column(type: 'integer')]
-    private int $m2Nvme;
-
-    #[ORM\Column(type: 'integer')]
-    private int $sata;
+    private int $sata = 0;
 
     public function getIde(): int
     {
@@ -46,26 +43,14 @@ class DataConnectors
         return $this;
     }
 
-    public function getM2Sata(): int
+    public function getM2(): int
     {
-        return $this->m2Sata;
+        return $this->m2;
     }
 
-    public function setM2Sata(int $m2Sata): self
+    public function setM2(int $m2): self
     {
-        $this->m2Sata = $m2Sata;
-
-        return $this;
-    }
-
-    public function getM2Nvme(): int
-    {
-        return $this->m2Nvme;
-    }
-
-    public function setM2Nvme(int $m2Nvme): self
-    {
-        $this->m2Nvme = $m2Nvme;
+        $this->m2 = $m2;
 
         return $this;
     }
