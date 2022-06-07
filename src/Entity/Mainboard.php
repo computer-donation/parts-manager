@@ -4,8 +4,8 @@ namespace App\Entity;
 
 use App\Entity\Mainboard\DataConnectors;
 use App\Entity\Vga\DisplayPorts;
-use App\Enum\FormFactor;
-use App\Enum\RamOutline;
+use App\Enum\MainboardFormFactor;
+use App\Enum\RamFormFactor;
 use App\Enum\RamType;
 use App\Enum\Socket;
 use App\Repository\MainboardRepository;
@@ -20,14 +20,14 @@ class Mainboard extends Part
     #[ORM\Column(type: 'string', length: 5, enumType: RamType::class)]
     private RamType $memoryType;
 
-    #[ORM\Column(type: 'string', length: 6, enumType: RamOutline::class)]
-    private RamOutline $memoryOutline;
+    #[ORM\Column(type: 'string', length: 6, enumType: RamFormFactor::class)]
+    private RamFormFactor $memoryFormFactor;
 
     #[ORM\Column(type: 'integer')]
     private int $memoryCap;
 
-    #[ORM\Column(type: 'string', length: 8, enumType: FormFactor::class)]
-    private FormFactor $size;
+    #[ORM\Column(type: 'string', length: 8, enumType: MainboardFormFactor::class)]
+    private MainboardFormFactor $formFactor;
 
     #[ORM\Embedded(class: DisplayPorts::class)]
     private DisplayPorts $displayPorts;
@@ -59,14 +59,14 @@ class Mainboard extends Part
         return $this;
     }
 
-    public function getMemoryOutline(): RamOutline
+    public function getMemoryFormFactor(): RamFormFactor
     {
-        return $this->memoryOutline;
+        return $this->memoryFormFactor;
     }
 
-    public function setMemoryOutline(RamOutline $memoryOutline): self
+    public function setMemoryFormFactor(RamFormFactor $memoryFormFactor): self
     {
-        $this->memoryOutline = $memoryOutline;
+        $this->memoryFormFactor = $memoryFormFactor;
 
         return $this;
     }
@@ -83,14 +83,14 @@ class Mainboard extends Part
         return $this;
     }
 
-    public function getSize(): FormFactor
+    public function getFormFactor(): MainboardFormFactor
     {
-        return $this->size;
+        return $this->formFactor;
     }
 
-    public function setSize(FormFactor $size): self
+    public function setFormFactor(MainboardFormFactor $formFactor): self
     {
-        $this->size = $size;
+        $this->formFactor = $formFactor;
 
         return $this;
     }

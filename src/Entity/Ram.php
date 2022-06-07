@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Enum\RamOutline;
+use App\Enum\RamFormFactor;
 use App\Enum\RamType;
 use App\Repository\RamRepository;
 use Doctrine\ORM\Mapping as ORM;
@@ -13,8 +13,8 @@ class Ram extends Part
     #[ORM\Column(type: 'integer')]
     private int $speed;
 
-    #[ORM\Column(type: 'string', length: 6, enumType: RamOutline::class)]
-    private RamOutline $outline;
+    #[ORM\Column(type: 'string', length: 6, enumType: RamFormFactor::class)]
+    private RamFormFactor $formFactor;
 
     #[ORM\Column(type: 'string', length: 5, enumType: RamType::class)]
     private RamType $type;
@@ -34,14 +34,14 @@ class Ram extends Part
         return $this;
     }
 
-    public function getOutline(): RamOutline
+    public function getFormFactor(): RamFormFactor
     {
-        return $this->outline;
+        return $this->formFactor;
     }
 
-    public function setOutline(RamOutline $outline): self
+    public function setFormFactor(RamFormFactor $formFactor): self
     {
-        $this->outline = $outline;
+        $this->formFactor = $formFactor;
 
         return $this;
     }

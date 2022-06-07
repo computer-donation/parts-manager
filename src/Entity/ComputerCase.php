@@ -2,24 +2,24 @@
 
 namespace App\Entity;
 
-use App\Enum\FormFactor;
+use App\Enum\CaseFormFactor;
 use App\Repository\ComputerCaseRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ComputerCaseRepository::class)]
 class ComputerCase extends Part
 {
-    #[ORM\Column(type: 'string', length: 8, enumType: FormFactor::class)]
-    private FormFactor $size;
+    #[ORM\Column(type: 'string', length: 8, enumType: CaseFormFactor::class)]
+    private CaseFormFactor $formFactor;
 
-    public function getSize(): FormFactor
+    public function getFormFactor(): CaseFormFactor
     {
-        return $this->size;
+        return $this->formFactor;
     }
 
-    public function setSize(FormFactor $size): self
+    public function setFormFactor(CaseFormFactor $formFactor): self
     {
-        $this->size = $size;
+        $this->formFactor = $formFactor;
 
         return $this;
     }

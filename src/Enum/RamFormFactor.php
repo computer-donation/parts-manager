@@ -2,7 +2,7 @@
 
 namespace App\Enum;
 
-enum RamOutline: string {
+enum RamFormFactor: string {
     case Desktop = 'DIMM';
     case Laptop = 'SODIMM';
 }
