@@ -17,7 +17,13 @@ class DisplayPorts
     private int $hdmi = 0;
 
     #[ORM\Column(type: 'integer')]
+    private int $miniHdmi = 0;
+
+    #[ORM\Column(type: 'integer')]
     private int $displayPort = 0;
+
+    #[ORM\Column(type: 'integer')]
+    private int $miniDisplayPort = 0;
 
     #[ORM\Column(type: 'integer')]
     private int $usbTypeC = 0;
@@ -58,6 +64,18 @@ class DisplayPorts
         return $this;
     }
 
+    public function getMiniHdmi(): int
+    {
+        return $this->miniHdmi;
+    }
+
+    public function setMiniHdmi(int $miniHdmi): self
+    {
+        $this->miniHdmi = $miniHdmi;
+
+        return $this;
+    }
+
     public function getDisplayPort(): int
     {
         return $this->displayPort;
@@ -66,6 +84,18 @@ class DisplayPorts
     public function setDisplayPort(int $displayPort): self
     {
         $this->displayPort = $displayPort;
+
+        return $this;
+    }
+
+    public function getMiniDisplayPort(): int
+    {
+        return $this->miniDisplayPort;
+    }
+
+    public function setMiniDisplayPort(int $miniDisplayPort): self
+    {
+        $this->miniDisplayPort = $miniDisplayPort;
 
         return $this;
     }

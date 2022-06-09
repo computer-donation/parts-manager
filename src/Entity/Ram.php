@@ -10,9 +10,6 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: RamRepository::class)]
 class Ram extends Part
 {
-    #[ORM\Column(type: 'integer')]
-    private int $speed;
-
     #[ORM\Column(type: 'string', length: 6, enumType: RamFormFactor::class)]
     private RamFormFactor $formFactor;
 
@@ -21,18 +18,6 @@ class Ram extends Part
 
     #[ORM\Column(type: 'integer')]
     private int $size;
-
-    public function getSpeed(): int
-    {
-        return $this->speed;
-    }
-
-    public function setSpeed(int $speed): self
-    {
-        $this->speed = $speed;
-
-        return $this;
-    }
 
     public function getFormFactor(): RamFormFactor
     {

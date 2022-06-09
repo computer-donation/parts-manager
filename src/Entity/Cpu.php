@@ -13,7 +13,7 @@ class Cpu extends Part
     private Socket $socket;
 
     #[ORM\Column(type: 'integer')]
-    private int $powerConsumption;
+    private int $tdp;
 
     #[ORM\Column(type: 'boolean')]
     private bool $integratedGraphics;
@@ -30,14 +30,14 @@ class Cpu extends Part
         return $this;
     }
 
-    public function getPowerConsumption(): int
+    public function getTdp(): int
     {
-        return $this->powerConsumption;
+        return $this->tdp;
     }
 
-    public function setPowerConsumption(int $powerConsumption): self
+    public function setTdp(int $tdp): self
     {
-        $this->powerConsumption = $powerConsumption;
+        $this->tdp = $tdp;
 
         return $this;
     }

@@ -10,19 +10,19 @@ use Doctrine\ORM\Mapping as ORM;
 class Vga extends Part
 {
     #[ORM\Column(type: 'integer')]
-    private int $recommendedPsuWattage;
+    private int $suggestedPsu;
 
     #[ORM\Embedded(class: DisplayPorts::class)]
     private DisplayPorts $displayPorts;
 
-    public function getRecommendedPsuWattage(): int
+    public function getSuggestedPsu(): int
     {
-        return $this->recommendedPsuWattage;
+        return $this->suggestedPsu;
     }
 
-    public function setRecommendedPsuWattage(int $recommendedPsuWattage): self
+    public function setSuggestedPsu(int $suggestedPsu): self
     {
-        $this->recommendedPsuWattage = $recommendedPsuWattage;
+        $this->suggestedPsu = $suggestedPsu;
 
         return $this;
     }
