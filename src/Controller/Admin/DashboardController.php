@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Cpu;
 use App\Entity\Mainboard;
 use App\Entity\Monitor;
+use App\Entity\Psu;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -32,5 +33,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Cpu', 'fa fa-tags', Cpu::class);
         yield MenuItem::linkToCrud('Mainboard', 'fa fa-file-text', Mainboard::class);
         yield MenuItem::linkToCrud('Monitor', 'fa fa-file-text', Monitor::class);
+        yield MenuItem::linkToCrud('Psu', 'fa fa-file-text', Psu::class);
     }
 }
