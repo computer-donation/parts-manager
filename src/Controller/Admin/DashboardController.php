@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Cpu;
 use App\Entity\Mainboard;
+use App\Entity\Monitor;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -27,9 +28,9 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
 
         yield MenuItem::linkToCrud('Cpu', 'fa fa-tags', Cpu::class);
         yield MenuItem::linkToCrud('Mainboard', 'fa fa-file-text', Mainboard::class);
+        yield MenuItem::linkToCrud('Monitor', 'fa fa-file-text', Monitor::class);
     }
 }
