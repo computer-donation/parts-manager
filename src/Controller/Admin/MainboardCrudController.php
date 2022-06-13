@@ -2,9 +2,10 @@
 
 namespace App\Controller\Admin;
 
+use App\Admin\Field\DataConnectorsField;
+use App\Admin\Field\DisplayPortsField;
 use App\Admin\Field\EnumField;
 use App\Entity\Mainboard;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 
 class MainboardCrudController extends AbstractPartCrudController
 {
@@ -15,15 +16,16 @@ class MainboardCrudController extends AbstractPartCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        return array_merge(parent::configureFields($pageName), [
+        yield from parent::configureFields($pageName);
+        yield from [
             EnumField::new('socket'),
             EnumField::new('memoryType'),
             EnumField::new('memoryFormFactor'),
             'memoryCap',
             EnumField::new('formFactor'),
             'integratedGraphics',
-            ArrayField::new('displayPorts'),
-            'dataConnectors',
-        ]);
+            DisplayPortsField::new('displayPorts'),
+            DataConnectorsField::new('dataConnectors'),
+        ];
     }
 }

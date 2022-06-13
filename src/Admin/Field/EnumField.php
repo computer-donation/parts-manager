@@ -21,6 +21,7 @@ final class EnumField implements FieldInterface
             ->setProperty($propertyName)
             ->setLabel($label)
             ->setTemplatePath('admin/field/enum.html.twig')
-            ->setFormType(ChoiceType::class);
+            ->setFormType(ChoiceType::class)
+            ->formatValue(fn (object $enum): string => $enum->value);
     }
 }

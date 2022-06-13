@@ -14,10 +14,11 @@ class CpuCrudController extends AbstractPartCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        return array_merge(parent::configureFields($pageName), [
+        yield from parent::configureFields($pageName);
+        yield from [
             EnumField::new('socket'),
             'tdp',
             'integratedGraphics',
-        ]);
+        ];
     }
 }

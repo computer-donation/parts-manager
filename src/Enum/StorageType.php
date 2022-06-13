@@ -3,7 +3,7 @@
 namespace App\Enum;
 
 enum StorageType: string {
-    case IDE = 'ide';
+    case IDE = 'IDE';
     case mSATA = 'mSATA';
     case m2SATA = 'm.2 SATA';
     case m2NVMe = 'm.2 NVMe';
