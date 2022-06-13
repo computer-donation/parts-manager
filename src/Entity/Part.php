@@ -16,7 +16,7 @@ class Part
     #[ORM\Column(type: 'string', length: 255)]
     private string $name;
 
-    #[ORM\Column(type: 'integer', enumType: Status::class)]
+    #[ORM\Column(type: 'string', length: 7, enumType: Status::class)]
     private Status $status = Status::Unknown;
 
     public function getId(): ?int

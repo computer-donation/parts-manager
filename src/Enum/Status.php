@@ -2,8 +2,8 @@
 
 namespace App\Enum;
 
-enum Status: int {
-    case Unknown = -1;
-    case Working = 1;
-    case Broken = 0;
+enum Status: string {
+    case Unknown = 'Unknown';
+    case Working = 'Working';
+    case Broken = 'Broken';
 }
